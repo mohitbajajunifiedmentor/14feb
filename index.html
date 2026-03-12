@@ -3,207 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Queen ❤️</title>
+<title>Sorry Deepu ❤️</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
 
 body{
-  height:100vh;
-  overflow:hidden;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(-45deg,#ff416c,#ff4b2b,#ff6a88,#ff99ac);
-  background-size:400% 400%;
-  animation:gradient 10s ease infinite;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url("https://res.cloudinary.com/domhkvjks/image/upload/v1773302046/IMG_20260303_235445_238_ppbxsq.jpg") center/cover no-repeat;
+overflow:hidden;
 }
 
-@keyframes gradient{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+/* Card */
+
+.container{
+
+position:relative;
+z-index:5;
+
+text-align:center;
+
+background:rgba(255,255,255,0.85);
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
+width:90%;
+max-width:420px;
 }
 
-.card{
-  backdrop-filter:blur(25px);
-  background:rgba(255,255,255,0.15);
-  padding:50px;
-  border-radius:30px;
-  text-align:center;
-  color:white;
-  width:450px;
-  box-shadow:0 30px 80px rgba(0,0,0,0.4);
-  animation:fadeIn 1.2s ease forwards;
-  position:relative;
+/* GF Photo */
+
+.photo{
+
+width:180px;
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid #ff3b6b;
+
+box-shadow:0 0 25px #ff3b6b,
+0 0 40px pink,
+0 0 60px red;
+
+margin-bottom:15px;
+
+animation:pulse 2s infinite;
+
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:scale(0.6);}
-  to{opacity:1;transform:scale(1);}
+@keyframes pulse{
+
+0%{transform:scale(1)}
+
+50%{transform:scale(1.05)}
+
+100%{transform:scale(1)}
+
 }
 
-h2{
-  font-size:26px;
-  margin-bottom:25px;
-  min-height:60px;
-  transition:0.5s;
+h1{
+color:#ff3b6b;
+margin-bottom:10px;
 }
 
-.hidden{
-  opacity:0;
-  transform:scale(0.5);
+/* Love Message */
+
+p{
+font-size:17px;
+color:#333;
+line-height:1.5;
 }
 
-.buttons{position:relative;height:120px;}
+/* Button */
 
 button{
-  padding:12px 35px;
-  border:none;
-  border-radius:40px;
-  font-size:16px;
-  cursor:pointer;
-  position:absolute;
-  transition:0.2s ease;
+
+margin-top:15px;
+
+padding:12px 22px;
+
+border:none;
+
+background:#ff3b6b;
+
+color:white;
+
+font-size:16px;
+
+border-radius:10px;
+
+cursor:pointer;
+
 }
 
-#yes{
-  background:#ff1744;
-  color:white;
-  left:80px;
+button:hover{
+background:#ff1f55;
 }
 
-#yes:hover{
-  transform:scale(1.2);
-  box-shadow:0 0 40px #ff1744;
-}
+/* 3D hearts */
 
-#no{
-  background:white;
-  color:#333;
-  left:260px;
-}
-
-.result{
-  display:none;
-  margin-top:20px;
-  font-size:24px;
-  animation:pop 1s ease forwards;
-}
-
-@keyframes pop{
-  0%{transform:scale(0);opacity:0;}
-  100%{transform:scale(1);opacity:1;}
-}
-
-.big{
-  font-size:70px;
-  animation:bounce 1s infinite alternate;
-}
-
-@keyframes bounce{
-  from{transform:translateY(0);}
-  to{transform:translateY(-20px);}
-}
-
-/* Floating Hearts */
 .heart{
-  position:absolute;
-  font-size:20px;
-  animation:float 6s linear infinite;
-  color:white;
+
+position:fixed;
+
+font-size:22px;
+
+color:red;
+
+animation:float 6s linear infinite;
+
 }
 
 @keyframes float{
-  0%{transform:translateY(100vh);opacity:0;}
-  50%{opacity:1;}
-  100%{transform:translateY(-10vh);opacity:0;}
+
+0%{
+transform:translateY(100vh) rotate(0deg) scale(1);
+opacity:1;
 }
 
-/* Random NO messages */
-.popup{
-  position:absolute;
-  font-size:22px;
-  font-weight:bold;
-  color:#fff176;
-  animation:fadeMove 2s forwards;
+100%{
+transform:translateY(-100vh) rotate(360deg) scale(1.5);
+opacity:0;
 }
 
-@keyframes fadeMove{
-  0%{opacity:0; transform:scale(0.5);}
-  50%{opacity:1;}
-  100%{opacity:0; transform:translateY(-50px) scale(1.2);}
+}
+
+/* Bouncing text */
+
+.love-text{
+
+position:fixed;
+
+font-size:30px;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:2px 2px 10px black;
+
+z-index:10;
+
+}
+
+#extra{
+margin-top:15px;
+font-size:18px;
+color:#ff2e63;
+font-weight:bold;
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h2 id="question">
-    Preeti Will You Be My Valentine? 💘
-  </h2>
+<div class="love-text" id="love">I Love You Gulabo ❤️</div>
 
-  <div class="buttons" id="btns">
-    <button id="yes">Yes ❤️</button>
-    <button id="no">No 😭</button>
-  </div>
+<div class="container">
 
-  <div class="result" id="result">
-    Thanku You My Making My Day
-    <div class="big">❤️</div>
-  </div>
+<!-- GF Photo -->
+
+<img class="photo" src="https://res.cloudinary.com/domhkvjks/image/upload/v1773314813/Screenshot_20260223_143854_fai6vw.jpg">
+
+<h1>Sorry Deepu ❤️</h1>
+
+<p>
+Deepu... 💌 <br>
+Tum gussa ho sakti ho, par meri duniya tumse hi hai. <br>
+Tumhari ek smile meri poori life ko happy bana deti hai. <br>
+Please maan jao Gulabo 🌹
+</p>
+
+<button onclick="loveClick()">Click karo agar thoda sa bhi pyaar hai 😅</button>
+
+<p id="extra"></p>
+
 </div>
 
 <script>
 
-/* Floating hearts */
-for(let i=0;i<40;i++){
-  const h=document.createElement("div");
-  h.classList.add("heart");
-  h.innerHTML="💖";
-  h.style.left=Math.random()*100+"vw";
-  h.style.animationDuration=(Math.random()*4+3)+"s";
-  document.body.appendChild(h);
+/* extra love line */
+
+function loveClick(){
+
+document.getElementById("extra").innerHTML=
+"Deepu ❤️<br> Tum meri life ka sabse beautiful part ho. <br> I love you Gulabo 💖";
+
 }
 
-/* NO button logic */
-const no=document.getElementById("no");
+/* floating hearts */
 
-const messages=[
-"Tu Pyar Nahi Karti Merse? 😭",
-"Badi Hi BatMiz Hai Tu to 😢",
-"Chatta Kha Kar Hi Yes Karegi? 😂",
-"Main seriously ro dunga 😭",
-"Mai Nahi Khel Raha Jaa 😢",
-];
+setInterval(()=>{
 
-no.addEventListener("mouseover",()=>{
+let heart=document.createElement("div");
 
-  // Move button super fast
-  no.style.left=Math.random()*350+"px";
-  no.style.top=Math.random()*100+"px";
+heart.innerHTML="❤️";
 
-  // Create random popup message
-  const popup=document.createElement("div");
-  popup.classList.add("popup");
-  popup.innerText=messages[Math.floor(Math.random()*messages.length)];
+heart.className="heart";
 
-  popup.style.left=Math.random()*window.innerWidth+"px";
-  popup.style.top=Math.random()*window.innerHeight+"px";
+heart.style.left=Math.random()*100+"%";
 
-  document.body.appendChild(popup);
+document.body.appendChild(heart);
 
-  setTimeout(()=>popup.remove(),2000);
-});
+setTimeout(()=>heart.remove(),6000);
 
-/* YES click */
-const yes=document.getElementById("yes");
-yes.addEventListener("click",()=>{
-  document.getElementById("question").classList.add("hidden");
-  document.getElementById("btns").style.display="none";
-  document.getElementById("result").style.display="block";
-});
+},700);
+
+/* bouncing love text */
+
+let love=document.getElementById("love");
+
+let x=200;
+let y=100;
+
+let dx=2;
+let dy=2;
+
+function moveLove(){
+
+let width=window.innerWidth-200;
+let height=window.innerHeight-50;
+
+x+=dx;
+y+=dy;
+
+if(x<0 || x>width) dx=-dx;
+if(y<0 || y>height) dy=-dy;
+
+love.style.left=x+"px";
+love.style.top=y+"px";
+
+requestAnimationFrame(moveLove);
+
+}
+
+moveLove();
 
 </script>
 
